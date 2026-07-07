@@ -43,11 +43,18 @@
   gap: 4px;
 }
 
+.connexion-titre-conteneur {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .connexion-titre {
-  color: #3A5B22;
-  font-size: 28px;
-  font-weight: 700;
   margin: 0;
+  color: #3A5B22;
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
   letter-spacing: -0.5px;
 }
 

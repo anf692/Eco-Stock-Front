@@ -4,6 +4,7 @@ import { FournisseurAuth, useAuth } from './context/AuthContext';
 import Connexion from './pages/Connexion';
 import TableauBord from './pages/TableauBord';
 import Produits from './pages/Produits';
+import Entrepots from './pages/Entrepots';
 
 
 // Composant RouteProtegee : 
@@ -46,6 +47,15 @@ function App() {
             element={
               <RouteProtegee>
                 <Produits />
+              </RouteProtegee>
+            } 
+          />
+
+          <Route 
+            path="/entrepots" 
+            element={
+              <RouteProtegee>
+                <Entrepots />
               </RouteProtegee>
             } 
           />

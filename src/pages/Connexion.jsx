@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Warehouse } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { Mail, Lock, AlertCircle } from 'lucide-react';
 import { Bouton } from '../components/common/Bouton';
 import { Entree } from '../components/common/Entree';
 import '../styles/Connexion.css';
+import login from '../assets/login.jpeg';
 
 
 // Page de connexion de l'application Eco-Stock.
@@ -38,7 +40,10 @@ export default function Connexion() {
       <div className="zone-formulaire">
         <div className="connexion-cadre">
           <div className="connexion-logo">
-            <h1 className="connexion-titre">Eco-Stock</h1>
+            <div className="connexion-titre-conteneur">
+              <Warehouse size={24} color="#3A5B22" />
+              <h1 className="connexion-titre">Eco-Stock</h1>
+            </div>
             <p className="connexion-soustitre">
               Veuillez vous identifier pour accéder à votre espace de gestion.
             </p>
@@ -108,7 +113,7 @@ export default function Connexion() {
       <div className="zone-illustration">
         <img 
           className="image-illustration"
-          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" 
+          src={login} 
           alt="Entrepôt éco-responsable" 
         />
       </div>
