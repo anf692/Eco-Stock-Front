@@ -30,6 +30,7 @@ export default function TableauBord() {
       setEntrepots(dataEntrepots);
     } catch (err) {
       setErreur("Une erreur s'est produite lors de la récupération des données.");
+      console.log(err)
     } finally {
       setChargement(false);
     }

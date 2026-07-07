@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { FournisseurAuth, useAuth } from './context/AuthContext';
 import Connexion from './pages/Connexion';
 import TableauBord from './pages/TableauBord';
+import Produits from './pages/Produits';
 
 
 // Composant RouteProtegee : 
@@ -36,6 +37,15 @@ function App() {
             element={
               <RouteProtegee>
                 <TableauBord />
+              </RouteProtegee>
+            } 
+          />
+
+          <Route 
+            path="/produits" 
+            element={
+              <RouteProtegee>
+                <Produits />
               </RouteProtegee>
             } 
           />

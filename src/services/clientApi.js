@@ -113,5 +113,133 @@ export const clientApi = {
     return username;
   },
 
+
+
+  // --- PRODUITS ---
+
+  /**
+   * Récupère la liste de tous les produits.
+   */
+  getProduits: async () => {
+    const reponse = await requete(`${BASE_URL}/api/produits/`);
+    if (!reponse.ok) throw new Error('Impossible de charger les produits');
+    return reponse.json();
+  },
+
+  /**
+   * Crée un nouveau produit.
+   */
+  creerProduit: async (produitData) => {
+    const reponse = await requete(`${BASE_URL}/api/produits/`, {
+      method: 'POST',
+      body: JSON.stringify(produitData),
+    });
+    if (!reponse.ok) {
+      const erreur = await reponse.json();
+      throw new Error(Object.values(erreur).flat().join(' ') || 'Erreur lors de la création du produit');
+    }
+    return reponse.json();
+  },
+
+  /**
+   * Modifie un produit existant.
+   */
+  modifierProduit: async (id, produitData) => {
+    const reponse = await requete(`${BASE_URL}/api/produits/${id}/`, {
+      method: 'PUT',
+      body: JSON.stringify(produitData),
+    });
+    if (!reponse.ok) {
+      const erreur = await reponse.json();
+      throw new Error(Object.values(erreur).flat().join(' ') || 'Erreur lors de la modification du produit');
+    }
+    return reponse.json();
+  },
+
+  /**
+   * Supprime un produit.
+   */
+  supprimerProduit: async (id) => {
+    const reponse = await requete(`${BASE_URL}/api/produits/${id}/`, {
+      method: 'DELETE',
+    });
+    if (!reponse.ok) throw new Error('Erreur lors de la suppression du produit');
+    return true;
+  },
+
+  /**
+   * Déplace un produit vers un autre entrepôt.
+   */
+  deplacerProduit: async (produitId, entrepotId) => {
+    const reponse = await requete(`${BASE_URL}/api/produits/${produitId}/move/`, {
+      method: 'POST',
+      body: JSON.stringify({ Entrepot: entrepotId }),
+    });
+
+    if (!reponse.ok) {
+      const erreur = await reponse.json();
+      throw new Error(erreur.error || 'Erreur lors du déplacement du produit');
+    }
+
+    return reponse.json();
+  },
+
+
+  // --- ENTREPÔTS ---
+
+  // Récupère la liste de tous les entrepôts.
+  getEntrepots: async () => {
+    const reponse = await requete(`${BASE_URL}/api/entrepots/`);
+    if (!reponse.ok) throw new Error('Impossible de charger les entrepôts');
+    return reponse.json();
+  },
+
+
+  // Crée un nouvel entrepôt.
+  creerEntrepot: async (entrepotData) => {
+    const reponse = await requete(`${BASE_URL}/api/entrepots/`, {
+      method: 'POST',
+      body: JSON.stringify(entrepotData),
+    });
+    if (!reponse.ok) {
+      const erreur = await reponse.json();
+      throw new Error(Object.values(erreur).flat().join(' ') || 'Erreur lors de la création');
+    }
+    return reponse.json();
+  },
+
+  
+  // Modifie un entrepôt existant.
+  modifierEntrepot: async (id, entrepotData) => {
+    const reponse = await requete(`${BASE_URL}/api/entrepots/${id}/`, {
+      method: 'PUT',
+      body: JSON.stringify(entrepotData),
+    });
+    if (!reponse.ok) {
+      const erreur = await reponse.json();
+      throw new Error(Object.values(erreur).flat().join(' ') || 'Erreur lors de la modification');
+    }
+    return reponse.json();
+  },
+
+  // Supprime un entrepôt.
+  supprimerEntrepot: async (id) => {
+    const reponse = await requete(`${BASE_URL}/api/entrepots/${id}/`, {
+      method: 'DELETE',
+    });
+    if (!reponse.ok) throw new Error('Erreur lors de la suppression de l\'entrepôt');
+    return true;
+  },
+
+  // Effectue un audit d'un entrepôt spécifique (total des produits stockés).
+  getAuditEntrepot: async (id) => {
+    const reponse = await requete(`${BASE_URL}/api/entrepots/${id}/audit/`);
+    if (!reponse.ok) throw new Error('Impossible de récupérer l\'audit de l\'entrepôt');
+    return reponse.json();
+  },
+
 }
+
+
+
 
