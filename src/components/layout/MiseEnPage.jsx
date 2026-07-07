@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BarreLaterale } from './BarreLaterale';
 import { EnTete } from './EnTete';
-import '../../styles/Disposition.css';
+import '../../styles/layout.css';
 
 /*
  Composant de Mise en page général (Layout) qui centralise la réactivité

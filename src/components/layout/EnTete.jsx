@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAuth } from '../../contexte/ContexteAuth';
+import { useAuth } from '../../context/AuthContext';
 import { LogOut, User, Menu } from 'lucide-react';
-import { Bouton } from '../Commun/Bouton';
-import '../../styles/Disposition.css';
+import { Bouton } from '../common/Bouton';
+import '../../styles/layout.css';
 
 
 // Composant d'en-tête principal réactif avec burger menu mobile.

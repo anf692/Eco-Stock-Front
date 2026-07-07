@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { MiseEnPage } from '../composants/layout/MiseEnPage';
-import { clientApi } from '../api/clientApi';
+import { MiseEnPage } from '../components/layout/MiseEnPage';
+import { clientApi } from '../services/clientApi';
 import { Package, CheckCircle, AlertTriangle, XCircle, Info, RefreshCw } from 'lucide-react';
-import { Bouton } from '../composants/Commun/Bouton';
+import { Bouton } from '../components/common/Bouton';
 import '../styles/TableauBord.css';
 
-/**
- * Page Tableau de bord.
- * Utilise des classes CSS standards issues de TableauBord.css.
- */
+
+//Page Tableau de bord.
 export default function TableauBord() {
   const [produits, setProduits] = useState([]);
   const [entrepots, setEntrepots] = useState([]);

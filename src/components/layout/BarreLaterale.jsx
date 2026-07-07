@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, Package, Warehouse, X } from 'lucide-react';
-import '../../styles/Disposition.css';
+import '../../styles/layout.css';
 
 
 //Barre de navigation latérale de l'application réactive et standard.

@@ -1,0 +1,280 @@
+/* ==========================================================================
+   Disposition.css
+   Gère la disposition générale (Layout) de l'application.
+   ========================================================================== */
+
+/* --- GABARIT DE PAGE (MISE EN PAGE) --- */
+.page-conteneur {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f3f4f5;
+  position: relative;
+}
+
+.page-zone-contenu {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Évite que flexbox ne déborde */
+}
+
+.page-principal {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.page-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .page-principal {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .page-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(25, 28, 29, 0.4);
+    z-index: 90;
+    backdrop-filter: blur(1px);
+  }
+}
+
+
+/* --- BARRE LATÉRALE DE NAVIGATION --- */
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #BBCABF;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 95;
+}
+
+.sidebar-entete {
+  padding: 24px;
+  border-bottom: 1px solid #E7E8E9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-logo-conteneur {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-app-nom {
+  margin: 0;
+  color: #3A5B22;
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.sidebar-bouton-fermer {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #3C4A42;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.sidebar-bouton-fermer:hover {
+  background-color: #f3f4f5;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
+.sidebar-lien {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  color: #5E6572;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-right: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar-lien:hover {
+  background-color: #f8faf9;
+  color: #3C4A42;
+}
+
+.sidebar-lien.active {
+  background-color: #F3F4F5;
+  color: #3A5B22;
+  border-right: 3px solid #3A5B22;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar-ouverte {
+    transform: translateX(0);
+  }
+
+  .sidebar-bouton-fermer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+/* --- BARRE SUPÉRIEURE (EN-TÊTE) --- */
+.header {
+  height: 70px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #BBCABF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-titre-conteneur {
+  display: flex;
+  align-items: center;
+}
+
+.header-bouton-menu {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #3C4A42;
+  margin-right: 12px;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.header-bouton-menu:hover {
+  background-color: #f3f4f5;
+}
+
+.header-titre {
+  margin: 0;
+  color: #191C1D;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header-info-utilisateur {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-profil {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3C4A42;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #F3F4F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3A5B22;
+  border: 1px solid #BBCABF;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 16px;
+  }
+
+  .header-bouton-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-profil span {
+    display: none; /* Masque le nom d'utilisateur sur petit écran */
+  }
+}
+
+/* --- UTILITAIRES DE MISE EN PAGE --- */
+.chargement-conteneur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  min-height: 300px;
+}
+
+.chargement-texte {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3A5B22;
+  font-weight: 600;
+}
+
+.flex-entre-deux {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.hauteur-ajustee {
+  height: fit-content;
+}
+
+
