@@ -1,0 +1,192 @@
+/* ==========================================================================
+   TableauBord.css
+   Style spécifique de la page d'accueil / Tableau de Bord (TableauBord.jsx).
+   ========================================================================== */
+
+/* --- GRILLE DE KPIS (STATS CARDS) --- */
+.stats-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.kpi-carte {
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #BBCABF;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 4px rgba(60, 74, 66, 0.02);
+}
+
+.kpi-icone-ronde {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Évite la déformation de l'icône sur petit écran */
+}
+
+/* Couleurs spécifiques des cercles d'icônes */
+.kpi-vert { background-color: #EBF5E6; color: #3A5B22; }
+.kpi-gris { background-color: #F3F4F5; color: #3C4A42; }
+.kpi-dispo { background-color: #D1FAE5; color: #065F46; }
+.kpi-reserve { background-color: #FEF3C7; color: #92400E; }
+.kpi-perime { background-color: #FEE2E2; color: #991B1B; }
+
+.kpi-textes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kpi-valeur {
+  font-size: 24px;
+  font-weight: 700;
+  color: #191C1D;
+  line-height: 1;
+}
+
+.kpi-label {
+  font-size: 13px;
+  color: #5E6572;
+  font-weight: 500;
+}
+
+
+/* --- SECTIONS D'ENTREPÔTS & AIDE RAPIDE --- */
+.db-sections {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.db-section-carte {
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #BBCABF;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.db-section-titre {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #3C4A42;
+  border-left: 3px solid #3A5B22;
+  padding-left: 8px;
+}
+
+.entrepot-grille {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.entrepot-carte {
+  border: 1px solid #E7E8E9;
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8faf9;
+  transition: border-color 0.2s;
+  gap: 16px;
+}
+
+.entrepot-carte:hover {
+  border-color: #BBCABF;
+}
+
+.entrepot-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.entrepot-nom {
+  font-weight: 600;
+  color: #191C1D;
+  font-size: 15px;
+}
+
+.entrepot-detail {
+  font-size: 12px;
+  color: #5E6572;
+}
+
+.audit-resultat-alerte {
+  background-color: #D1FAE5;
+  color: #065F46;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+  border: 1px solid #A7F3D0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- RÉACTIVITÉ MOBILES & TABLETTES --- */
+@media (max-width: 1000px) {
+  .db-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .entrepot-carte {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .entrepot-carte button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .db-section-carte {
+    padding: 16px;
+  }
+}
+
+.stats-total-label {
+  font-size: 13px;
+  color: #5E6572;
+  font-weight: 600;
+}
+
+.aide-rapide-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 13px;
+  color: #3C4A42;
+  line-height: 18px;
+}
+
+.aide-rapide-liste p {
+  margin: 0;
+}
+
+.db-erreur-alerte {
+  background-color: #FEE2E2;
+  color: #991B1B;
+  border: 1px solid #FCA5A5;
+  padding: 12px;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
