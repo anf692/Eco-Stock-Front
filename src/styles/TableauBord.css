@@ -2,6 +2,7 @@
    TableauBord.css
    Style spécifique de la page d'accueil / Tableau de Bord (TableauBord.jsx).
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap');
 
 /* --- GRILLE DE KPIS (STATS CARDS) --- */
 .stats-grille {
@@ -19,6 +20,7 @@
   align-items: center;
   gap: 16px;
   box-shadow: 0 2px 4px rgba(60, 74, 66, 0.02);
+  font-family: 'Syne', sans-serif;
 }
 
 .kpi-icone-ronde {
@@ -73,6 +75,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  font-family: 'Syne', sans-serif;
 }
 
 .db-section-titre {

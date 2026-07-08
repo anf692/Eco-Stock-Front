@@ -2,6 +2,7 @@
    Disposition.css
    Gère la disposition générale (Layout) de l'application.
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap');
 
 /* --- GABARIT DE PAGE (MISE EN PAGE) --- */
 .page-conteneur {
@@ -81,7 +82,7 @@
 .sidebar-app-nom {
   margin: 0;
   color: #3A5B22;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.5px;
@@ -116,7 +117,7 @@
   gap: 12px;
   padding: 12px 24px;
   color: #5E6572;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -195,7 +196,7 @@
 .header-titre {
   margin: 0;
   color: #191C1D;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: 18px;
   font-weight: 700;
 }
@@ -211,7 +212,7 @@
   align-items: center;
   gap: 8px;
   color: #3C4A42;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: 14px;
   font-weight: 600;
 }

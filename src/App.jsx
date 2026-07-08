@@ -5,6 +5,7 @@ import Connexion from './pages/Connexion';
 import TableauBord from './pages/TableauBord';
 import Produits from './pages/Produits';
 import Entrepots from './pages/Entrepots';
+import Loader from './components/common/Loader';
 
 
 // Composant RouteProtegee : 
@@ -29,12 +30,22 @@ function App() {
     <FournisseurAuth>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Loader />} />
           {/* Route publique : Connexion */}
           <Route path="/connexion" element={<Connexion />} />
 
           {/* Routes privées : Nécessitent d'être connecté */}
           <Route 
-            path="/" 
+            path="/dashboard" 
+            element={
+              <RouteProtegee>
+                <TableauBord />
+              </RouteProtegee>
+            } 
+          />
+
+          <Route 
+            path="/connexion" 
             element={
               <RouteProtegee>
                 <TableauBord />

@@ -2,6 +2,7 @@
    Connexion.css
    Style spécifique de la page de connexion (Connexion.jsx).
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap');
 
 .connexion-page {
   display: flex;
@@ -9,7 +10,7 @@
   height: 100vh;
   background-color: #ffffff;
   overflow: hidden;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Syne', sans-serif;
 }
 
 .zone-formulaire {
@@ -33,6 +34,7 @@
   flex-direction: column;
   gap: 24px;
   box-shadow: 0 4px 12px rgba(60, 74, 66, 0.05);
+  font-family: 'Syne', sans-serif;
 }
 
 .connexion-logo {
@@ -52,7 +54,7 @@
 .connexion-titre {
   margin: 0;
   color: #3A5B22;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.5px;
@@ -85,6 +87,7 @@
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
+  font-family: 'Syne', sans-serif;
 }
 
 .connexion-mdp-oublie:hover {
