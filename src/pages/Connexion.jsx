@@ -26,7 +26,7 @@ export default function Connexion() {
 
     try {
       await connexion(identifiant, motDePasse);
-      navigate('/'); // Redirection vers le tableau de bord
+      navigate('/dashboard'); // Redirection vers le tableau de bord
     } catch (err) {
       setErreur(err.message || 'Impossible de se connecter. Vérifiez vos identifiants.');
     } finally {

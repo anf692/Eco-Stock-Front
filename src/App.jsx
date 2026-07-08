@@ -72,7 +72,7 @@ function App() {
           />
          
           {/* Redirection automatique pour toute route inconnue */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/connexion" replace />} />
         </Routes>
       </BrowserRouter>
     </FournisseurAuth>

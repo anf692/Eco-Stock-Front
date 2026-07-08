@@ -24,7 +24,7 @@ export const BarreLaterale = ({ $ouverte, surFermeture }) => {
       </div>
       
       <nav className="sidebar-nav">
-        <NavLink to="/" end onClick={surFermeture} className="sidebar-lien">
+        <NavLink to="/dashboard" end onClick={surFermeture} className="sidebar-lien">
           <LayoutDashboard size={18} />
           Tableau de Bord
         </NavLink>
