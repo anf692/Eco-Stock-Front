@@ -193,3 +193,24 @@
   margin-bottom: 16px;
 }
 
+.graphiques {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.graphique-carte {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+@media (max-width: 900px) {
+  .graphiques {
+    grid-template-columns: 1fr;
+  }
+}
+
+

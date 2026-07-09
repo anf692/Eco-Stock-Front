@@ -3,6 +3,10 @@ import { MiseEnPage } from '../components/layout/MiseEnPage';
 import { clientApi } from '../services/clientApi';
 import { Package, CheckCircle, AlertTriangle, XCircle, Info, RefreshCw } from 'lucide-react';
 import { Bouton } from '../components/common/Bouton';
+import {
+  PieChart, Pie, Cell, Tooltip, ResponsiveContainer,
+  BarChart, Bar, XAxis, YAxis, CartesianGrid
+} from 'recharts';
 import '../styles/TableauBord.css';
 
 
@@ -61,6 +65,14 @@ export default function TableauBord() {
   const dispoCount = produits.filter(p => p.status === 'disponible').length;
   const reserveCount = produits.filter(p => p.status === 'reserve').length;
   const perimeCount = produits.filter(p => p.status === 'perime').length;
+
+  const dataStats = [
+    { name: 'Disponibles', value: dispoCount },
+    { name: 'Réservés', value: reserveCount },
+    { name: 'Périmés', value: perimeCount }
+  ];
+
+  const COLORS = ['#3A5B22', '#D97706', '#DC2626'];
 
   if (chargement) {
     return (
@@ -135,6 +147,45 @@ export default function TableauBord() {
             <span className="kpi-label">Périmés</span>
           </div>
         </div>
+      </div>
+
+      <div className="graphiques">
+
+        {/* CAMEMBERT */}
+        <div className="graphique-carte">
+          <h3>Répartition des produits</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                data={dataStats}
+                dataKey="value"
+                nameKey="name"
+                outerRadius={100}
+                label={({ name, percent }) => `${name} (${(percent * 100).toFixed(0)}%)`}
+              >
+                {dataStats.map((entry, index) => (
+                  <Cell key={index} fill={COLORS[index]} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* BARRES */}
+        <div className="graphique-carte">
+          <h3>Produits par statut</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={dataStats}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="value" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
       </div>
 
       {/* Deuxième ligne : Liste des entrepôts + Audits de capacité */}
