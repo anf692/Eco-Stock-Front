@@ -143,10 +143,17 @@
 }
 
 .audit-alerte {
-  background-color: #EBF5E6;
-  color: #3A5B22;
-  border: 1px solid #BBCABF;
+  background-color: #D1FAE5;
+  color: #065F46;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
   margin-top: 8px;
+  border: 1px solid #A7F3D0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .barre-filtres .champ-conteneur,

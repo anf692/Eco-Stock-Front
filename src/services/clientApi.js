@@ -97,7 +97,7 @@ export const clientApi = {
   connexion: async (username, password) => {
     const reponse = await fetch(`${BASE_URL}/api/token/`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' }, //On indique au serveur que les données envoyées sont en JSON.
       body: JSON.stringify({ username, password }),
     });
 
@@ -117,18 +117,16 @@ export const clientApi = {
 
   // --- PRODUITS ---
 
-  /**
-   * Récupère la liste de tous les produits.
-   */
+  // Récupère la liste de tous les produits.
   getProduits: async () => {
     const reponse = await requete(`${BASE_URL}/api/produits/`);
     if (!reponse.ok) throw new Error('Impossible de charger les produits');
     return reponse.json();
   },
 
-  /**
-   * Crée un nouveau produit.
-   */
+  
+  
+  //Crée un nouveau produit.
   creerProduit: async (produitData) => {
     const reponse = await requete(`${BASE_URL}/api/produits/`, {
       method: 'POST',
@@ -141,9 +139,8 @@ export const clientApi = {
     return reponse.json();
   },
 
-  /**
-   * Modifie un produit existant.
-   */
+
+ //Modifie un produit existant.
   modifierProduit: async (id, produitData) => {
     const reponse = await requete(`${BASE_URL}/api/produits/${id}/`, {
       method: 'PUT',
@@ -156,9 +153,9 @@ export const clientApi = {
     return reponse.json();
   },
 
-  /**
-   * Supprime un produit.
-   */
+ 
+ 
+ // Supprime un produit.
   supprimerProduit: async (id) => {
     const reponse = await requete(`${BASE_URL}/api/produits/${id}/`, {
       method: 'DELETE',
@@ -167,9 +164,8 @@ export const clientApi = {
     return true;
   },
 
-  /**
-   * Déplace un produit vers un autre entrepôt.
-   */
+
+ //Déplace un produit vers un autre entrepôt.
   deplacerProduit: async (produitId, entrepotId) => {
     const reponse = await requete(`${BASE_URL}/api/produits/${produitId}/move/`, {
       method: 'POST',

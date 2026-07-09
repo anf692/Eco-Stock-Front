@@ -11,7 +11,7 @@ const Loader = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/connexion");
-    }, 3000); // ⏱️ 3 secondes
+    }, 3000); // 3 secondes
 
     return () => clearTimeout(timer);
   }, []);

@@ -6,7 +6,7 @@ import { Mail, Lock, AlertCircle } from 'lucide-react';
 import { Bouton } from '../components/common/Bouton';
 import { Entree } from '../components/common/Entree';
 import '../styles/Connexion.css';
-import login from '../assets/login.jpeg';
+import login from '../assets/login.png';
 
 
 // Page de connexion de l'application Eco-Stock.
@@ -102,7 +102,7 @@ export default function Connexion() {
 
           <div className="connexion-pied">
             <span>Besoin d'aide ? </span>
-            <a className="connexion-lien-support" href="mailto:support@ecostock.com">
+            <a className="connexion-lien-support" href="#">
               Contacter le support
             </a>
           </div>
